@@ -38,5 +38,27 @@ a = ggplot() +
   ylab("Cummulative Score per Team") +
   theme_classic()
 #########################################################################################################
-#Problem 2
+#Problem 2: Guess my number game 
+#usage: guessmynumber() then follow prompts 
+guessmynumber <- function()
+{
+  num <- sample(1:100,1)
+  guess <- readline(prompt = "I'm thinking of a number 1-100. Guess: ")
+  for(i in 1:9)
+  {
+      if(guess>num)
+      {
+        guess <- readline(prompt = "Lower. Guess: ")
+      }
+      else if(guess<num)
+      {
+        guess <- readline(prompt = "Higher. Guess: ")
+      }
+    else
+    {
+      return("Correct!")
+    }
+  }
+  return(paste("The number was ",as.character(num)))
+}
 
